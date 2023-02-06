@@ -18,10 +18,6 @@
 .img:hover {
   cursor: zoom-in;
 }
-.img:active {
-  width: 100%;
-  transition: 0.8s;
-}
 .title {
   margin-top: 15px;
 }

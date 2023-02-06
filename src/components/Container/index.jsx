@@ -23,11 +23,10 @@ const Container = () => {
         console.log(data);   //It will simulate a DELETE request and will return deleted product with "isDeleted" & "deletedOn" keys
         setProducts(products.filter(product => product.id !== data.id))
    }
-
-   const totalCount = products.reduce((sum,{stock}) => sum + stock, 0)
-   const totalPrice = products.reduce((sum,{stock,price}) => sum + price * stock, 0)
-   const totalPriceDiscount = products.reduce((sum,{stock,price,discountPercentage}) => 
-        sum + (price - price * discountPercentage / 100) * stock, 0)
+   const totalCount = products.length
+   const totalPrice = products.reduce((sum,{price}) => sum + price, 0)
+   const totalPriceDiscount = products.reduce((sum,{price,discountPercentage}) => 
+        sum + (price - price * discountPercentage / 100), 0)
   
     return (
         <div >
